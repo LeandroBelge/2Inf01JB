@@ -1,0 +1,28 @@
+@model List<Tarefa>;
+<h1>Lista de tarefas</h1>
+<table>
+    <thead>
+        <th>Id</th>
+        <th>Descrição</th>
+        <th>Concluída?</th>
+        <th>Ações</th>
+    </thead>
+    <tbody>
+        @for(int i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <td>@Model[i].Id</td>
+                <td>@Model[i].Descricao</td>
+                <td>@Model[i].Concluida</td>
+                <td>
+                    <i onclick="alertar()" class="fa-solid fa-pen-to-square"></i>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script>
+    function alertar(){
+        alert("Funcionou");
+    }
+</script>
